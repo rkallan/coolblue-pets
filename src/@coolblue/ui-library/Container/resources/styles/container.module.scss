@@ -61,6 +61,15 @@
         }
     }
 
+    &[variant~="transparant"] {
+        background-color: transparent;
+        color: safe-hsla(map-get($colorBlack, default));
+
+        a {
+            color: inherit;
+        }
+    }
+
     &[variant~="text-color-red"] {
         color: safe-hsla(map-get($colorRed, default));
     }
