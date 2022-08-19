@@ -1,0 +1,17 @@
+@import "./src/resources/styles/variables";
+@import "./src/resources/styles/mixins";
+
+.container {
+    display: flex;
+    transition: map-get($transition, default);
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    &::after {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+}

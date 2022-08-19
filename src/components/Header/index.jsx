@@ -6,10 +6,14 @@ const Container = loadable(() => import(/* webpackChunkName: "Container" */ "@co
     fallback: <Loading />,
 });
 
+const Logo = loadable(() => import(/* webpackChunkName: "Container" */ "./Logo"), {
+    fallback: <Loading />,
+});
+
 function Header() {
     return (
-        <Container classNameContainer={styles.container} containerElementTag="header" variant="yellow">
-            Header
+        <Container classNameContainer={styles.container} containerElementTag="header" classNameUnit={styles.unit} variant="yellow">
+            <Logo />
         </Container>
     );
 }
