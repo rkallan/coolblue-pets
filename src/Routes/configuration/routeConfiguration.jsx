@@ -1,6 +1,5 @@
 import loadable from "@loadable/component";
 
-const Homepage = loadable(() => import(/* webpackChunkName: "Homepage" */ "pages/Homepage"));
 const Example = loadable(() => import(/* webpackChunkName: "Example" */ "pages/Example"));
 
 const Error = loadable(() => import(/* webpackChunkName: "Error" */ "pages/Error"));
@@ -13,15 +12,13 @@ const routeConfiguration = [
     {
         id: 20,
         path: "/",
-        exact: true,
-        authenticated: false,
-        element: <Homepage />,
+        element: null,
+        redirect: "/pets",
     },
     {
         id: 30,
         path: "/pets",
         exact: true,
-        authenticated: false,
         element: <Pets />,
     },
     {
@@ -29,7 +26,6 @@ const routeConfiguration = [
         path: "/example",
         element: <Example />,
         exact: true,
-        authenticated: false,
     },
     {
         id: 10,

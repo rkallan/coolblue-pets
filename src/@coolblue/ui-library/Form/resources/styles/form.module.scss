@@ -1,5 +1,5 @@
-@import "resources/styles/variables/variables";
-@import "resources/styles/mixins/mixins";
+@import "resources/styles/mixins";
+@import "resources/styles/variables";
 
 .container {
     .unit {
@@ -7,10 +7,11 @@
             display: flex;
             flex-direction: row-reverse;
 
-            > * {
+            >* {
                 margin: 0.5rem 0 0.5rem 0.5rem;
             }
         }
+
         &[variant~="row"] {
             display: flex;
             flex-direction: row;
@@ -21,7 +22,7 @@
                 gap: 2rem;
             }
 
-            > * {
+            >* {
                 flex: 1;
             }
         }

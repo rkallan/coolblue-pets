@@ -170,7 +170,7 @@ InputfieldText.defaultProps = {
 };
 
 InputfieldText.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     defaultValue: PropTypes.string,
@@ -178,12 +178,12 @@ InputfieldText.propTypes = {
     readOnly: PropTypes.bool,
     disabled: PropTypes.bool,
     required: PropTypes.bool,
-    validationTypes: PropTypes.undefined,
+    validationTypes: PropTypes.shape({}),
     autoComplete: PropTypes.oneOf(["on", "off"]),
     max: PropTypes.number,
     min: PropTypes.number,
     step: PropTypes.number,
-    clearValue: PropTypes.number,
+    clearValue: PropTypes.bool,
     customOnChangeHandler: PropTypes.func,
 };
 

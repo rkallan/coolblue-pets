@@ -1,5 +1,5 @@
-@import "resources/styles/variables/variables";
-@import "resources/styles/mixins/mixins";
+@import "resources/styles/mixins";
+@import "resources/styles/variables";
 
 .container {
     &[variant="margin-right"] {
@@ -12,7 +12,7 @@
         height: 0;
         color: safe-hsla(map-get($colorWhite, default));
 
-        &:checked + .label {
+        &:checked+.label {
             .checkbox {
                 border-color: safe-hsla(map-get($colorBlack, default));
                 background-color: safe-hsla(map-get($colorBlack, default));
@@ -24,16 +24,17 @@
             }
         }
 
-        &:hover + .label,
-        &:focus + .label {
+        &:hover+.label,
+        &:focus+.label {
             .checkbox {
                 border-color: safe-hsla(map-get($colorBlack, default));
             }
         }
 
         &:checked {
-            &:focus + .label,
-            &:hover + .label {
+
+            &:focus+.label,
+            &:hover+.label {
                 .checkbox {
                     background-color: safe-hsla(map-get($colorWhite, default));
 

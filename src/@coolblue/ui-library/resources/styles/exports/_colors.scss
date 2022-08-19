@@ -1,10 +1,10 @@
-@import "../mixins/mixins";
-@import "../variables/variables";
+@import "../mixins";
+@import "../variables";
 
 :export {
     colorWhite: safe-hsla(map-get($colorWhite, default));
     colorBlack: safe-hsla(map-get($colorBlack, default));
-    colorBlackLighter: safe-hsla(map-get($colorBlack, lighter));
+    colorBlackLighter: safe-hsla(map-get($colorBlack, default));
     colorGray: safe-hsla(map-get($colorGray, default));
     colorGrayDarken: safe-hsla(map-get($colorGray, darken));
     colorError: safe-hsla(map-get($colorRed, default));

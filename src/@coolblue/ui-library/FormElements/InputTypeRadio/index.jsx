@@ -4,7 +4,7 @@ import Loading from "@coolblue/ui-library/Loading";
 import { ucFirst } from "@coolblue/js-helpers";
 import styles from "./resources/styles/inputTypeRadio.module.scss";
 
-const Icons = loadable(() => import(/* webpackChunkName: "MainRoutes" */ "@coolblue/ui-library/Icons"), {
+const Icons = loadable(() => import(/* webpackChunkName: "Icons" */ "@coolblue/ui-library/Icons"), {
     fallback: <Loading />,
 });
 

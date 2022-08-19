@@ -27,20 +27,13 @@ function Example() {
         <>
             <Suspense>
                 <Container>
-                    <h1>Heading 1</h1>
-                    <h2>Heading 2</h2>
-                    <h3>Heading 3</h3>
-                    <h4>Heading 4</h4>
-                    <h5>Heading 5</h5>
-                    <h6>Heading 6</h6>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris efficitur semper nisl, accumsan posuere mauris
-                        iaculis sit amet. In nunc libero, maximus ac viverra eget, tempus et dui. Donec tincidunt commodo nibh eu
-                        ullamcorper. Nullam scelerisque ex sed orci varius rhoncus. Nam pretium rhoncus neque, in pellentesque ipsum congue
-                        at. Vivamus vitae ultricies augue, <a href="#example">non congue tellus</a>. Pellentesque maximus gravida justo. Sed
-                        sodales nec tortor id molestie. Integer feugiat tortor eu neque egestas, quis sodales odio sodales. Donec ac aliquet
-                        risus.
-                    </p>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
                 </Container>
             </Suspense>
             <Suspense>

@@ -1,5 +1,5 @@
-@import "resources/styles/variables/variables";
-@import "resources/styles/mixins/mixins";
+@import "resources/styles/mixins";
+@import "resources/styles/variables";
 
 .container {
     width: 2.5rem;
@@ -25,7 +25,7 @@
         &:hover,
         &:focus {
             transform: scale(1.25);
-            background-color: safe-hsla(map-get($colorBlack, lighter));
+            background-color: safe-hsla(map-get($colorBlack, default));
 
             [variant~="scroll-to-top"] {
                 color: safe-hsla(map-get($colorRed, default));

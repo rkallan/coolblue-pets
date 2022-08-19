@@ -1,10 +1,10 @@
-@import "../mixins/mixins";
+@import "../mixins";
 @import "./colors";
 @import "./gap";
 @import "./transition";
 
-$fontFamilyBase: Raleway, sans-serif;
-$fontFamilyHeading: Redressed, cursive;
+$fontFamilyBase: "Open Sans", sans-serif;
+$fontFamilyHeading: "Open Sans", sans-serif;
 $fontSizeDefault: (
     px: 16px,
     "%": 100%,
@@ -17,7 +17,7 @@ $font: (
         font-size: map-get($fontSizeDefault, "%"),
         line-height: calc(1em + 0.5rem),
         font-weight: 400,
-        color: safe-hsla(map-get($colorBlack, lighter)),
+        color: safe-hsla(map-get($colorBlack, default)),
     ),
     link: (
         display: inline-block,
@@ -41,7 +41,7 @@ $font: (
             position: absolute,
             left: 0,
             right: 0,
-            bottom: -0.125rem,
+            bottom: -0.0125rem,
             content: " ",
             width: 100%,
             height: 0.01625rem,
@@ -53,65 +53,53 @@ $font: (
         ),
     ),
     heading: (
-        _h1: (
-            font-family: $fontFamilyHeading,
-            font-size: 4.375rem,
-            line-height: 1.125,
-            font-weight: 900,
-            overflow-wrap: break-word,
-            margin: 0,
-            padding: 0 0 0.75rem 0,
-            color: inherit,
+        h1: (
+            none: (
+                font-size: 1.625rem,
+            ),
+            medium: (
+                font-size: 2.0625rem,
+            ),
         ),
-        _h2: (
-            font-family: $fontFamilyHeading,
-            font-size: 2.8125rem,
-            line-height: 1.125,
-            font-weight: 700,
-            margin: 0,
-            padding: 0 0 0.75rem 0,
-            overflow-wrap: break-word,
-            color: inherit,
+        h2: (
+            none: (
+                font-size: 1.4375rem,
+            ),
+            medium: (
+                font-size: 1.75rem,
+            ),
         ),
-        _h3: (
-            font-family: $fontFamilyHeading,
-            font-size: 2rem,
-            line-height: 1.125,
-            font-weight: 700,
-            margin: 0,
-            padding: 0 0 0.75rem 0,
-            overflow-wrap: break-word,
-            color: inherit,
+        h3: (
+            none: (
+                font-size: 1.4375rem,
+            ),
+            medium: (
+                font-size: 1.5rem,
+            ),
         ),
-        _h4: (
-            font-family: $fontFamilyHeading,
-            font-size: 1.5rem,
-            line-height: 1.125,
-            font-weight: 700,
-            margin: 0,
-            padding: 0,
-            overflow-wrap: break-word,
-            color: inherit,
+        h4: (
+            none: (
+                font-size: 1.125rem,
+            ),
+            medium: (
+                font-size: 1.125rem,
+            ),
         ),
-        _h5: (
-            font-family: $fontFamilyHeading,
-            font-size: 1.25rem,
-            line-height: 1.125,
-            font-weight: 700,
-            margin: 0,
-            padding: 0,
-            overflow-wrap: break-word,
-            color: inherit,
+        h5: (
+            none: (
+                font-size: 1rem,
+            ),
+            medium: (
+                font-size: 1rem,
+            ),
         ),
-        _h6: (
-            font-family: $fontFamilyHeading,
-            font-size: 1rem,
-            line-height: 1.125,
-            font-weight: 500,
-            margin: 0,
-            padding: 0,
-            overflow-wrap: break-word,
-            color: inherit,
+        h6: (
+            none: (
+                font-size: 1rem,
+            ),
+            medium: (
+                font-size: 1rem,
+            ),
         ),
     ),
     paragraph: (
@@ -125,138 +113,13 @@ $font: (
     ),
 );
 
-$fontFamily: (
-    "raleway-100": (
-        fontFamily: "Raleway",
-        fontWeight: 100,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-100-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 100,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-200": (
-        fontFamily: "Raleway",
-        fontWeight: 200,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-200-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 200,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-300": (
-        fontFamily: "Raleway",
-        fontWeight: 300,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-300-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 300,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-500": (
-        fontFamily: "Raleway",
-        fontWeight: 500,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-500-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 500,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-600": (
-        fontFamily: "Raleway",
-        fontWeight: 600,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-600-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 600,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-700": (
-        fontFamily: "Raleway",
-        fontWeight: 700,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-700-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 700,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-800": (
-        fontFamily: "Raleway",
-        fontWeight: 800,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-800-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 800,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-900": (
-        fontFamily: "Raleway",
-        fontWeight: 900,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-900-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 900,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "raleway-regular": (
-        fontFamily: "Raleway",
-        fontWeight: 400,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-    "raleway-italic": (
-        fontFamily: "Raleway",
-        fontWeight: 400,
-        fontStyle: (
-            "italic",
-        ),
-    ),
-    "redressed-regular": (
-        fontFamily: "Redressed",
-        fontWeight: 400,
-        fontStyle: (
-            "normal",
-        ),
-    ),
-);
+%heading {
+    font-family: $fontFamilyHeading;
+    line-height: 1.5;
+    font-weight: 700;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    overflow-wrap: break-word;
+    transition: map-get($transition, default);
+}

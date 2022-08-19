@@ -3,8 +3,9 @@
     "short_name": "pets",
     "theme_color": "#111111",
     "background_color": "#ffffff",
-    "display": "browser",
+    "display": "Standalone",
     "orientation": "portrait",
+    "id": "1908",
     "scope": "/",
     "start_url": "/",
     "icons": [

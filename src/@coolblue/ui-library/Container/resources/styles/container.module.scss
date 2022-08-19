@@ -1,5 +1,5 @@
-@import "resources/styles/mixins/mixins";
-@import "resources/styles/variables/variables";
+@import "resources/styles/mixins";
+@import "resources/styles/variables";
 
 .container {
     display: flex;
@@ -16,7 +16,7 @@
     }
 
     &[variant~="black"] {
-        background-color: safe-hsla(map-get($colorBlack, lighter));
+        background-color: safe-hsla(map-get($colorBlack, default));
         color: safe-hsla(map-get($colorWhite, default));
 
         a {
@@ -33,10 +33,28 @@
         }
     }
 
+    &[variant~="yellow"] {
+        background-color: safe-hsla(map-get($colorYellow, light));
+        color: safe-hsla(map-get($colorBlack, default));
+
+        a {
+            color: inherit;
+        }
+    }
+
+    &[variant~="blue"] {
+        background-color: safe-hsla(map-get($colorBlue, light));
+        color: safe-hsla(map-get($colorBlack, default));
+
+        a {
+            color: inherit;
+        }
+    }
+
     &[variant~="default"],
     &[variant~="white"] {
         background-color: safe-hsla(map-get($colorWhite, default));
-        color: safe-hsla(map-get($colorBlack, lighter));
+        color: safe-hsla(map-get($colorBlack, default));
 
         a {
             color: inherit;

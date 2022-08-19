@@ -1,0 +1,14 @@
+@mixin addHeadings($headings) {
+    @each $selector, $selectorMap in $headings {
+        #{$selector} {
+            @extend %heading;
+            @each $breakpoint, $styleMap in $selectorMap {
+                @include respond-to($breakpoint) {
+                    @each $property, $value in $styleMap {
+                        #{$property}: $value;
+                    }
+                }
+            }
+        }
+    }
+}

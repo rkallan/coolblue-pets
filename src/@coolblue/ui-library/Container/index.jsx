@@ -41,22 +41,22 @@ Container.defaultProps = {
     variant: "white",
     textColor: "default",
     fullWidth: false,
-    containerElementTag: "section",
+    containerElementTag: "div",
     classNameContainer: undefined,
     noUnitElement: false,
-    unitElementTag: "section",
+    unitElementTag: "div",
     classNameUnit: undefined,
 };
 
 Container.propTypes = {
     children: PropTypes.node,
-    variant: PropTypes.string,
+    variant: PropTypes.oneOf(["white", "red", "blue", "yellow", "black", "transparent"]),
     textColor: PropTypes.string,
     fullWidth: PropTypes.bool,
-    containerElementTag: PropTypes.string,
+    containerElementTag: PropTypes.oneOf(["article", "div", "section", "header", "footer", "main"]),
     classNameContainer: PropTypes.string,
     noUnitElement: PropTypes.bool,
-    unitElementTag: PropTypes.string,
+    unitElementTag: PropTypes.oneOf(["article", "div", "section", "header", "footer", "main"]),
     classNameUnit: PropTypes.string,
 };
 

@@ -1,5 +1,5 @@
-@import "resources/styles/mixins/mixins";
-@import "resources/styles/variables/variables";
+@import "resources/styles/mixins";
+@import "resources/styles/variables";
 
 .container {
     position: relative;
@@ -144,6 +144,7 @@
 
         &[state~="isValid"] {
             color: safe-hsla(map-get($colorGreen, default));
+
             svg {
                 opacity: 1;
             }
@@ -151,6 +152,7 @@
 
         &[state~="inValid"] {
             color: safe-hsla(map-get($colorRed, default));
+
             svg {
                 opacity: 1;
             }

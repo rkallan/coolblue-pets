@@ -3,20 +3,27 @@ $colorWhite: (
 );
 
 $colorBlack: (
-    default: hsla(0, 0%, 0%, 1),
-    lighter: hsla(0, 0%, 14%, 1),
+    default: hsla(0, 0%, 7%, 1),
 );
 
 $colorGray: (
-    default: hsla(0, 0%, 14%, 1),
+    light: hsla(0, 0%, 94%, 1),
+    default: hsla(0, 0%, 87%, 1),
+    dark: hsla(0, 0%, 40%, 1),
 );
 
 $colorYellow: (
-    default: hsla(53, 100%, 50%, 1),
+    light: hsla(46, 93%, 63%, 1),
+    default: hsla(46, 74%, 54%, 1),
+);
+
+$colorBlue: (
+    light: hsla(210, 61%, 43%, 1),
+    dark: hsla(216, 62%, 41%, 1),
 );
 
 $colorRed: (
-    default: hsla(352, 89%, 40%, 1),
+    default: hsla(3, 69%, 44%, 1),
 );
 
 $colorGreen: (

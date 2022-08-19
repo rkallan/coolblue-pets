@@ -51,7 +51,7 @@ Checkbox.defaultProps = {
 };
 
 Checkbox.propTypes = {
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     value: PropTypes.bool,

@@ -1,0 +1,12 @@
+@import "./src/resources/styles/variables";
+@import "./src/resources/styles/mixins";
+
+.container {
+    position: sticky;
+    height: 3.5rem;
+    top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    z-index: 10;
+    justify-content: center;
+}
