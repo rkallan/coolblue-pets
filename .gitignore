@@ -1,0 +1,53 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+**/node_modules
+*.pnp*
+
+# build & coverage files
+**/build
+**/dist
+**/lib
+**/coverage
+
+# misc & ide
+.DS_Store
+.idea
+.vscode
+.~lock.*
+.buildpath
+.idea
+.project
+.settings
+
+# env files
+.env.*local
+
+# compiled files
+**/*.com
+**/*.class
+**/*.dll
+**/*.exe
+**/*.o
+**/*.so
+
+# minified, map & packed compressed files
+**/*.min.*
+**/*.css
+**/*.map
+**/*.7z
+**/*.dmg
+**/*.gz
+**/*.iso
+**/*.jar
+**/*.rar
+**/*.tar
+**/*.zip
+
+# log & database files
+*-debug.log*
+*-error.log*
+**/log
+**/*.log
+**/*.sql
+**/*.sqlite

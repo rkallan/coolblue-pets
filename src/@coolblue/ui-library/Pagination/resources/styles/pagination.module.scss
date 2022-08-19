@@ -1,0 +1,114 @@
+@import "resources/styles/variables/variables";
+@import "resources/styles/mixins/mixins";
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: map-get($gap, default);
+    width: 100%;
+
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        gap: map-get($gap, small);
+
+        .unit {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            flex: auto;
+            align-items: center;
+            list-style-type: none;
+            gap: map-get($gap, small);
+
+            &[variant~="text"] {
+                flex: none;
+
+                .button {
+                    padding: 0 0.75rem;
+                }
+            }
+
+            &[variant~="number"] {
+                justify-content: center;
+            }
+
+            .item {
+                display: flex;
+                margin: 0;
+                padding: 0;
+
+                &[state~="hidden"] {
+                    display: none;
+                }
+
+                &[variant~="charLength-2"] {
+                    .button {
+                        min-width: 2.5rem;
+                    }
+                }
+
+                &[variant~="charLength-3"] {
+                    .button {
+                        min-width: 3rem;
+                    }
+                }
+
+                &[variant~="charLength-4"] {
+                    .button {
+                        min-width: 3.5rem;
+                    }
+                }
+            }
+
+            .button {
+                min-width: 2.5rem;
+                min-height: 2.25rem;
+                font-weight: 700;
+                color: safe-hsla(map-get($colorRed, default));
+                padding: 0 map-get($gap, small);
+                margin: 0;
+                border: 0.0625rem solid safe-hsla(map-get($colorRed, default));
+                background: safe-hsla(map-get($colorWhite, default));
+                transition: map-get($transition, default);
+
+                &:disabled {
+                    color: safe-hsla(map-get($colorGray, default), 0.25);
+                    border-color: safe-hsla(map-get($colorGray, default), 0.25);
+                    cursor: default;
+                }
+
+                &:hover:not([disabled]),
+                &:focus:not([disabled]) {
+                    border-color: safe-hsla(map-get($colorBlack, default));
+                    color: safe-hsla(map-get($colorBlack, default));
+                    transform: scale(1.1);
+                }
+
+                &:active:not([disabled]) {
+                    transform: scale(0.95);
+                }
+
+                &[state~="is-active"] {
+                    color: safe-hsla(map-get($colorWhite, default));
+                    border-color: safe-hsla(map-get($colorRed, default));
+                    background: safe-hsla(map-get($colorRed, default));
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    .info {
+        display: flex;
+        align-items: center;
+
+        .text {
+            font-size: 0.875rem;
+            line-height: 1;
+            color: safe-hsla(map-get($colorBlack, default));
+        }
+    }
+}

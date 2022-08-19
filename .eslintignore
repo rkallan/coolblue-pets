@@ -1,0 +1,8 @@
+/.eslintrc.js
+/*.config.js
+**/coverage
+**/build*
+**/examples
+**/node_modules
+**/@coolblue
+**/api
