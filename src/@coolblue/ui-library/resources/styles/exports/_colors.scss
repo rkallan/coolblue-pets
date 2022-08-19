@@ -4,11 +4,7 @@
 :export {
     colorWhite: safe-hsla(map-get($colorWhite, default));
     colorBlack: safe-hsla(map-get($colorBlack, default));
-    colorBlackLighter: safe-hsla(map-get($colorBlack, default));
     colorGray: safe-hsla(map-get($colorGray, default));
-    colorGrayDarken: safe-hsla(map-get($colorGray, darken));
+    colorGrayDark: safe-hsla(map-get($colorGray, dark));
     colorError: safe-hsla(map-get($colorRed, default));
-    colorErrorDarker: safe-hsla(map-get($colorRed, darken));
-    colorErrorLighter: safe-hsla(map-get($colorRed, lighter));
-    colorWhiteDisabled: safe-hsla(map-get($colorWhite, default), map-get($opacity, disabled));
 }

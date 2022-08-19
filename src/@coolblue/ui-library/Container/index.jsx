@@ -21,17 +21,15 @@ function Container({
     const [ContainerElementTag] = useState(() => containerElementTag);
     const [UnitElementTag] = useState(() => unitElementTag);
 
-    if (noUnitElement) {
-        return (
-            <ContainerElementTag className={containerClassName} variant={containerVariant}>
-                {children}
-            </ContainerElementTag>
-        );
-    }
+    const ContainerChild = () => {
+        if (noUnitElement) return children;
+
+        return <UnitElementTag className={unitClassName}>{children}</UnitElementTag>;
+    };
 
     return (
         <ContainerElementTag className={containerClassName} variant={containerVariant}>
-            <UnitElementTag className={unitClassName}>{children}</UnitElementTag>
+            <ContainerChild />
         </ContainerElementTag>
     );
 }
