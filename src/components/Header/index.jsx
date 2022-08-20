@@ -12,7 +12,7 @@ const Logo = loadable(() => import(/* webpackChunkName: "Container" */ "./Logo")
 
 function Header() {
     return (
-        <Container classNameContainer={styles.container} containerElementTag="header" classNameUnit={styles.unit} variant="yellow">
+        <Container classNameContainer={styles.container} containerElementTag="header" classNameUnit={styles.unit} variant="transparent">
             <Logo />
         </Container>
     );

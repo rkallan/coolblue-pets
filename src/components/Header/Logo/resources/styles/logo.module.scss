@@ -3,7 +3,14 @@
 
 .container {
     display: flex;
+    height: 4rem;
+    max-height: 4rem;
+    color: safe-hsla(map-get($colorWhite, default));
     transition: map-get($transition, default);
+
+    @include respond-to("medium") {
+        color: safe-hsla(map-get($colorYellow, light));
+    }
 
     &:hover {
         transform: scale(1.1);

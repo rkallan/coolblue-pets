@@ -1,0 +1,68 @@
+@import "resources/styles/variables";
+@import "resources/styles/mixins";
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    min-height: 20rem;
+    justify-content: flex-end;
+    border-radius: map-get($borderRadius, default);
+    transition: map-get($transition, default);
+    overflow: hidden;
+
+    @include respond-to("medium") {
+        flex-direction: row;
+    }
+
+    .unit {
+        &[variant~="image"] {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            @include respond-to("medium") {
+                position: absolute;
+            }
+
+            .item {
+                height: 100%;
+                width: 100%;
+
+                .image {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &[variant~="content"] {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: map-get($gap, default);
+            color: safe-hsla(map-get($colorWhite, default));
+            width: 100%;
+            min-width: 16rem;
+            min-height: 3rem;
+            padding: 0 map-get($gap, default);
+            background-color: safe-hsla(map-get($colorBlue, light));
+            z-index: 5;
+
+            @include respond-to("medium") {
+                flex-direction: column;
+                justify-content: center;
+                align-items: unset;
+                align-self: flex-end;
+                height: 100%;
+                max-width: calc(100% / 3);
+                padding: map-get($gap, large);
+            }
+        }
+    }
+}

@@ -13,7 +13,7 @@ const NavigationLink = loadable(() => import(/* webpackChunkName: "NavigationLin
 function Logo() {
     return (
         <NavigationLink className={styles.container} to="/pets">
-            <Icons icon="petIcon" />
+            <Icons icon="petIcon" noContainer />
         </NavigationLink>
     );
 }

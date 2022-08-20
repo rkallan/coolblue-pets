@@ -12,8 +12,7 @@ function MainRoutes() {
     const [currentElement, setCurrentElement] = useState(() => element);
     const transition = useTransition(location, { key: location.key, ...pageAnimation, onRest: () => setCurrentElement(() => element) });
 
-    if (element.props.value.matches[0].route.redirect)
-        return <RedirectRoute redirect={currentElement.props.value.matches[0].route.redirect} />;
+    if (element.props.value.matches[0].route.redirect) return <RedirectRoute redirect={element.props.value.matches[0].route.redirect} />;
 
     return transition((style, item) => {
         const itemPathnameAsArray = item.pathname.split("/").filter((value) => validations.isNotEmpty(value, true));

@@ -3,11 +3,10 @@
 
 .container {
     display: flex;
-    flex: auto;
+    flex: none;
     flex-direction: column;
     align-content: center;
     justify-content: flex-start;
-    color: inherit;
     min-width: 100%;
     padding: map-get($gap, large);
 
@@ -15,59 +14,35 @@
         padding: 0;
     }
 
-    &[variant~="black"] {
-        background-color: safe-hsla(map-get($colorBlack, default));
-        color: safe-hsla(map-get($colorWhite, default));
-
-        a {
-            color: inherit;
-        }
-    }
-
-    &[variant~="red"] {
-        background-color: safe-hsla(map-get($colorRed, default));
-        color: safe-hsla(map-get($colorWhite, default));
-
-        a {
-            color: inherit;
-        }
-    }
-
-    &[variant~="yellow"] {
-        background-color: safe-hsla(map-get($colorYellow, light));
-        color: safe-hsla(map-get($colorBlack, default));
-
-        a {
-            color: inherit;
-        }
-    }
-
-    &[variant~="blue"] {
-        background-color: safe-hsla(map-get($colorBlue, light));
-        color: safe-hsla(map-get($colorBlack, default));
-
-        a {
-            color: inherit;
-        }
-    }
-
     &[variant~="default"],
     &[variant~="white"] {
         background-color: safe-hsla(map-get($colorWhite, default));
         color: safe-hsla(map-get($colorBlack, default));
-
-        a {
-            color: inherit;
-        }
     }
 
     &[variant~="transparant"] {
         background-color: transparent;
         color: safe-hsla(map-get($colorBlack, default));
+    }
 
-        a {
-            color: inherit;
-        }
+    &[variant~="black"] {
+        background-color: safe-hsla(map-get($colorBlack, default));
+        color: safe-hsla(map-get($colorWhite, default));
+    }
+
+    &[variant~="red"] {
+        background-color: safe-hsla(map-get($colorRed, default));
+        color: safe-hsla(map-get($colorWhite, default));
+    }
+
+    &[variant~="yellow"] {
+        background-color: safe-hsla(map-get($colorYellow, light));
+        color: safe-hsla(map-get($colorBlack, default));
+    }
+
+    &[variant~="blue"] {
+        background-color: safe-hsla(map-get($colorBlue, light));
+        color: safe-hsla(map-get($colorBlack, default));
     }
 
     &[variant~="text-color-red"] {

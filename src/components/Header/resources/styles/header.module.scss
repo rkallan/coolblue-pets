@@ -3,16 +3,18 @@
 
 .container {
     position: sticky;
-    height: 3.5rem;
-    max-height: 3.5rem;
+    flex-direction: row;
+    height: 6rem;
+    max-height: 6rem;
     top: 0;
     padding-top: 0;
     padding-bottom: 0;
-    z-index: 10;
-    flex-direction: row;
     align-items: center;
+    background-color: safe-hsla(map-get($colorWhite, default));
+    z-index: 10;
+    transition: map-get($transition, default);
 
-    .unit {
-        justify-content: center;
+    @include respond-to("medium") {
+        background-color: safe-hsla(map-get($colorYellow, light));
     }
 }
