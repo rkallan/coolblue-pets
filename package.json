@@ -26,7 +26,7 @@
     "dependencies": {
         "@loadable/component": "^5.15.2",
         "@react-spring/web": "^9.5.2",
-        "@reduxjs/toolkit": "^1.8.4",
+        "@reduxjs/toolkit": "^1.8.5",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.3.0",
         "@testing-library/user-event": "^14.4.3",
@@ -39,14 +39,14 @@
         "react-router-dom": "^6.3.0",
         "react-scripts": "^5.0.1",
         "redux": "^4.2.0",
-        "sass": "^1.54.4",
+        "sass": "^1.54.5",
         "source-map-explorer": "^2.5.2",
         "web-vitals": "^2.1.4"
     },
     "devDependencies": {
         "@types/jest": "^28.1.7",
         "@types/loadable__component": "^5.13.4",
-        "@types/node": "^18.7.6",
+        "@types/node": "^18.7.8",
         "@types/react": "^18.0.17",
         "@types/react-dom": "^18.0.6",
         "@typescript-eslint/eslint-plugin": "^5.33.1",
