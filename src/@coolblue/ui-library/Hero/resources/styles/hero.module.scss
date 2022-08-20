@@ -5,7 +5,7 @@
     position: relative;
     display: flex;
     flex-direction: column-reverse;
-    min-height: 20rem;
+    height: 15rem;
     justify-content: flex-end;
     border-radius: map-get($borderRadius, default);
     transition: map-get($transition, default);
@@ -13,6 +13,7 @@
 
     @include respond-to("medium") {
         flex-direction: row;
+        min-height: 20rem;
     }
 
     .unit {

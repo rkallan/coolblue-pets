@@ -23,7 +23,7 @@ const pageAnimation = {
         zIndex: 4,
     },
     exitBeforeEnter: true,
-    onStart: (): void => {
+    onStart: () => {
         window.scrollTo({
             top: 0,
             behavior: "smooth",

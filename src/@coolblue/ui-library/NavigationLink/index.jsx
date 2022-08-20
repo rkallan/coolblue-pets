@@ -7,7 +7,7 @@ function NavigationLink({ children, to, onClick, setTabIndex = false, ...props }
     const location = useLocation();
     const { pathname, hash, search } = location;
     const resolved = useResolvedPath(to);
-    const isActive = !!useMatch({ path: resolved.pathname, end: true });
+    const isActive = `${resolved.pathname}${resolved.search}${resolved.hash}` === `${location.pathname}${location.search}${location.hash}`;
     const [state, setState] = useState(() => {
         return {
             referer: { pathname, hash, search },
@@ -15,11 +15,12 @@ function NavigationLink({ children, to, onClick, setTabIndex = false, ...props }
     });
 
     const onClickHandlerNavLink = (event) => {
+        event.currentTarget.blur();
+
         if (isActive) {
             event.preventDefault();
             return;
         }
-        event.currentTarget.blur();
 
         if (onClick && getType(onClick) === "function") onClick(event);
     };

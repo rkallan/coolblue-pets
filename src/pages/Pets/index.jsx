@@ -11,6 +11,10 @@ const Hero = loadable(() => import(/* webpackChunkName: "Hero" */ "@coolblue/ui-
     fallback: <Loading />,
 });
 
+const NavigationLink = loadable(() => import(/* webpackChunkName: "NavigationLink" */ "@coolblue/ui-library/NavigationLink"), {
+    fallback: <Loading />,
+});
+
 const Button = loadable(() => import(/* webpackChunkName: "Button" */ "@coolblue/ui-library/FormElements/Button"), {
     fallback: <Loading />,
 });
@@ -31,13 +35,17 @@ function Pets() {
             </div>
             <PetsSearch />
             <PetsResults />
-            <Hero image={heroData.image} imageSource={heroData.imageSource}>
-                <h2 className={styles.title}>{heroData.title}</h2>
-                <p className={styles.text}>{heroData.text}</p>
-                <div className={styles.button}>
-                    <Button variant="small white">{heroData.button}</Button>
-                </div>
-            </Hero>
+            <div className={styles.unit}>
+                <NavigationLink className={styles.link} to="rak">
+                    <Hero image={heroData.image} imageSource={heroData.imageSource}>
+                        <h2 className={styles.title}>{heroData.title}</h2>
+                        <p className={styles.text}>{heroData.text}</p>
+                        <div className={styles.button}>
+                            <Button variant="small white">{heroData.button}</Button>
+                        </div>
+                    </Hero>
+                </NavigationLink>
+            </div>
         </Container>
     );
 }
