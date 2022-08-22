@@ -1,0 +1,65 @@
+@import "./src/resources/styles/variables";
+@import "./src/resources/styles/mixins";
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: map-get($gap, default);
+
+    .unit {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+
+        .list {
+            display: flex;
+            flex-direction: row;
+            gap: map-get($gap, default);
+            flex-wrap: nowrap;
+
+            .item {
+                margin: 0;
+                padding: 0;
+
+                .link {
+                    display: flex;
+                    flex-direction: column;
+                    gap: map-get($gap, default);
+
+                    &::after {
+                        display: none;
+                    }
+
+                    .icon {
+                        display: flex;
+                        justify-content: center;
+                        width: 12rem;
+                        height: 5rem;
+                        margin-top: map-get($gap, large);
+                        background-color: safe-hsla(map-get($colorGray, light));
+                        color: safe-hsla(map-get($colorBlue, dark));
+                        border-radius: map-get($borderRadius, default);
+
+                        svg {
+                            margin-top: -3rem;
+                            fill: currentColor;
+
+                            line,
+                            circle,
+                            polyline,
+                            path,
+                            ellipse {
+                                stroke: currentColor;
+                                fill: currentColor;
+                            }
+                        }
+                    }
+
+                    .title {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

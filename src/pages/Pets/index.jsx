@@ -1,26 +1,9 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { useMemo } from "react";
-import { useSelector } from "react-redux";
 import loadable from "@loadable/component";
 import { Loading } from "@coolblue/ui-library";
-import { useGetAllPetsQuery, petsApi } from "features/pets/petsApi";
-import heroData from "./resources/data/hero";
+import { useGetAllPetsQuery } from "features/pets/petsApi";
 import styles from "./resources/styles/pets.module.scss";
 
 const Container = loadable(() => import(/* webpackChunkName: "Container" */ "@coolblue/ui-library/Container"), {
-    fallback: <Loading />,
-});
-
-const Hero = loadable(() => import(/* webpackChunkName: "Hero" */ "@coolblue/ui-library/Hero"), {
-    fallback: <Loading />,
-});
-
-const NavigationLink = loadable(() => import(/* webpackChunkName: "NavigationLink" */ "@coolblue/ui-library/NavigationLink"), {
-    fallback: <Loading />,
-});
-
-const Button = loadable(() => import(/* webpackChunkName: "Button" */ "@coolblue/ui-library/FormElements/Button"), {
     fallback: <Loading />,
 });
 
@@ -36,6 +19,10 @@ const PetsHero = loadable(() => import(/* webpackChunkName: "PetsHero" */ "featu
     fallback: <Loading />,
 });
 
+const PetsCategories = loadable(() => import(/* webpackChunkName: "PetsCategories" */ "features/pets/PetsCategories"), {
+    fallback: <Loading />,
+});
+
 function Pets() {
     useGetAllPetsQuery();
 
@@ -47,6 +34,7 @@ function Pets() {
             <PetsSearch />
             <PetsResults />
             <PetsHero />
+            <PetsCategories />
         </Container>
     );
 }
