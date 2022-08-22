@@ -1,5 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
 import loadable from "@loadable/component";
 import { Loading } from "@coolblue/ui-library";
+import { useGetAllPetsQuery, petsApi } from "features/pets/petsApi";
 import heroData from "./resources/data/hero";
 import styles from "./resources/styles/pets.module.scss";
 
@@ -19,15 +24,21 @@ const Button = loadable(() => import(/* webpackChunkName: "Button" */ "@coolblue
     fallback: <Loading />,
 });
 
-const PetsSearch = loadable(() => import(/* webpackChunkName: "Container" */ "features/pets/PetsSearch"), {
+const PetsSearch = loadable(() => import(/* webpackChunkName: "PetsSearch" */ "features/pets/PetsSearch"), {
     fallback: <Loading />,
 });
 
-const PetsResults = loadable(() => import(/* webpackChunkName: "Container" */ "features/pets/PetsResults"), {
+const PetsResults = loadable(() => import(/* webpackChunkName: "PetsResults" */ "features/pets/PetsResults"), {
+    fallback: <Loading />,
+});
+
+const PetsHero = loadable(() => import(/* webpackChunkName: "PetsHero" */ "features/pets/PetsHero"), {
     fallback: <Loading />,
 });
 
 function Pets() {
+    useGetAllPetsQuery();
+
     return (
         <Container classNameContainer={styles.container} containerElementTag="section" noUnitElement variant="white">
             <div className={styles.unit}>
@@ -35,17 +46,7 @@ function Pets() {
             </div>
             <PetsSearch />
             <PetsResults />
-            <div className={styles.unit}>
-                <NavigationLink className={styles.link} to="rak">
-                    <Hero image={heroData.image} imageSource={heroData.imageSource}>
-                        <h2 className={styles.title}>{heroData.title}</h2>
-                        <p className={styles.text}>{heroData.text}</p>
-                        <div className={styles.button}>
-                            <Button variant="small white">{heroData.button}</Button>
-                        </div>
-                    </Hero>
-                </NavigationLink>
-            </div>
+            <PetsHero />
         </Container>
     );
 }

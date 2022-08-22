@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import { petsReducers } from "features/pets/petsSlice";
+// import { petsReducers } from "features/pets/petsSlice";
+import { petsApi } from "features/pets/petsApi";
 
 const reducer = combineReducers({
-    pets: petsReducers,
+    [petsApi.reducerPath]: petsApi.reducer,
 });
 
 const rootReducer = (state, action) => {
@@ -19,7 +20,7 @@ const store = configureStore({
             immutableCheck: false,
             serializableCheck: false,
             thunk: true,
-        }),
+        }).concat(petsApi.middleware),
     devTools: process.env.NODE_ENV === "development",
 });
 

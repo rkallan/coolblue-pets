@@ -30,13 +30,10 @@
     &:hover:not([disabled]),
     &:focus:not([disabled]) {
         border-color: safe-hsla(map-get($colorWhite, default));
-        @include respond-to("medium") {
-            &[variant~="white"] {
-                &:hover {
-                    color: safe-hsla(map-get($colorWhite, default));
-                    background: safe-hsla(map-get($colorBlue, light));
-                }
-            }
+
+        &[variant~="white"] {
+            color: safe-hsla(map-get($colorWhite, default));
+            background: safe-hsla(map-get($colorBlue, light));
         }
     }
 
@@ -54,7 +51,6 @@
         gap: map-get($gap, small);
         width: 100%;
         overflow: hidden;
-        transition: map-get($transition, default);
 
         &[variant~="content"] {
             visibility: hidden;
@@ -62,6 +58,7 @@
             width: 0;
             height: 0;
             font-weight: 700;
+            color: inherit;
 
             @include respond-to("medium") {
                 visibility: visible;

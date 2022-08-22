@@ -22,6 +22,12 @@ const routeConfiguration = [
         element: <Pets />,
     },
     {
+        id: 40,
+        path: "/pet/:id/:name",
+        exact: true,
+        element: <Pets />,
+    },
+    {
         id: 1000,
         path: "/example",
         element: <Example />,

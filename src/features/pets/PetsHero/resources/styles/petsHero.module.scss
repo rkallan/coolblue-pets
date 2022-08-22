@@ -1,0 +1,53 @@
+@import "./src/resources/styles/variables";
+@import "./src/resources/styles/mixins";
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .link {
+        display: flex;
+        flex-direction: column;
+
+        button {
+            transition: map-get($transition, slow);
+        }
+
+        &:hover:not([disabled]),
+        &:focus:not([disabled]) {
+            button {
+                &[variant~="white"] {
+                    @include respond-to("medium") {
+                        color: safe-hsla(map-get($colorWhite, default));
+                        background: safe-hsla(map-get($colorBlue, light));
+                    }
+                }
+            }
+        }
+
+        &::after {
+            display: none;
+        }
+    }
+
+    .title {
+        position: relative;
+    }
+
+    .text {
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        font-weight: 400;
+        transition: map-get($transition, default);
+
+        @include respond-to("medium") {
+            visibility: visible;
+            opacity: 1;
+            width: unset;
+            height: unset;
+            padding-bottom: map-get($gap, small);
+        }
+    }
+}

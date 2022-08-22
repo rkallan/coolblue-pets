@@ -9,47 +9,5 @@
     .unit {
         display: flex;
         flex-direction: column;
-
-        .link {
-            display: flex;
-            flex-direction: column;
-            transition: map-get($transition, default);
-
-            &:hover:not([disabled]),
-            &:focus:not([disabled]) {
-                button {
-                    border-color: safe-hsla(map-get($colorWhite, default));
-                    transition: map-get($transition, default);
-
-                    @include respond-to("medium") {
-                        &[variant~="white"] {
-                            color: safe-hsla(map-get($colorWhite, default));
-                            background: safe-hsla(map-get($colorBlue, light));
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .title {
-        position: relative;
-    }
-
-    .text {
-        visibility: hidden;
-        opacity: 0;
-        width: 0;
-        height: 0;
-        font-weight: 400;
-        transition: map-get($transition, default);
-
-        @include respond-to("medium") {
-            visibility: visible;
-            opacity: 1;
-            width: unset;
-            height: unset;
-            padding-bottom: map-get($gap, small);
-        }
     }
 }
