@@ -5,4 +5,50 @@
     display: flex;
     flex-direction: column;
     gap: map-get($gap, default);
+
+    .unit {
+        &[variant="result"] {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: map-get($gap, default);
+
+            @include respond-to("medium") {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .item {
+                display: flex;
+                flex-direction: column;
+
+                .link {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: map-get($gap, default);
+
+                    @include respond-to("medium") {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    &::after {
+                        display: none;
+                    }
+
+                    .image {
+                        border-radius: map-get($borderRadius, default);
+                        overflow: hidden;
+
+                        img {
+                            object-fit: cover;
+                        }
+                    }
+
+                    .title {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
 }

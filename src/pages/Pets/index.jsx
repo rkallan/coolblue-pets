@@ -7,7 +7,7 @@ const Container = loadable(() => import(/* webpackChunkName: "Container" */ "@co
     fallback: <Loading />,
 });
 
-const PetsSearch = loadable(() => import(/* webpackChunkName: "PetsSearch" */ "features/pets/PetsSearch"), {
+const PetsSearchForm = loadable(() => import(/* webpackChunkName: "PetsSearch" */ "features/pets/PetsSearchForm"), {
     fallback: <Loading />,
 });
 
@@ -31,7 +31,7 @@ function Pets() {
             <div className={styles.unit}>
                 <h1>Pets</h1>
             </div>
-            <PetsSearch />
+            <PetsSearchForm />
             <PetsResults />
             <PetsHero />
             <PetsCategories />

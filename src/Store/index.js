@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-// import { petsReducers } from "features/pets/petsSlice";
+import { petsReducers } from "features/pets/petsSlice";
 import { petsApi } from "features/pets/petsApi";
 
 const reducer = combineReducers({
     [petsApi.reducerPath]: petsApi.reducer,
+    petsSearch: petsReducers,
 });
 
 const rootReducer = (state, action) => {

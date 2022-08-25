@@ -1,16 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    entities: undefined,
-    loading: "idle",
-    currentRequestId: undefined,
-    error: undefined,
+    value: undefined,
 };
 
 const pets = createSlice({
-    name: "pets",
+    name: "petsSearch",
     initialState,
     reducers: {
+        setSearchValue: (state, action) => {
+            const tempState = state;
+            const searchValue = action.payload;
+
+            tempState.value = searchValue;
+
+            return tempState;
+        },
         resetPets: () => {
             const newState = initialState;
 
@@ -19,7 +24,7 @@ const pets = createSlice({
     },
 });
 
-const { resetPets } = pets.actions;
+const { resetPets, setSearchValue } = pets.actions;
 const petsReducers = pets.reducer;
 
-export { resetPets, petsReducers };
+export { resetPets, setSearchValue, petsReducers };
