@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState, useEffect, useCallback } from "react";
 import { useSelector } from "react-redux";
 import loadable from "@loadable/component";
@@ -36,15 +34,8 @@ function PetsResults() {
                 keys: ["name"],
             });
             const result = fuse.search(query);
-            const finalResult = [];
-            if (result.length) {
-                result.forEach((item) => {
-                    finalResult.push(item.item);
-                });
-                setSearchData(finalResult);
-            } else {
-                setSearchData([]);
-            }
+            const finalResult = result.map(({ item }) => item);
+            setSearchData(finalResult);
         },
         [data]
     );
